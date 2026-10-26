@@ -1,0 +1,1685 @@
+/* ==========================================================================
+   Ramya Covai Acting Service - Complete Responsive Stylesheet
+   Design System: H&M-Inspired Minimalist Editorial Aesthetic
+   Universal Cross-Device Compatibility (Mobile, Tablet, Desktop, iPad, 4K)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* H&M Signature Brand Colors */
+  --hm-red: #e50010;
+  --hm-red-hover: #c7000e;
+  --hm-red-subtle: rgba(229, 0, 16, 0.08);
+  --hm-red-border: rgba(229, 0, 16, 0.28);
+
+  --bg: #ffffff;
+  --bg-subtle: #f9f9f9;
+  --card: #ffffff;
+  --card-translucent: rgba(255, 255, 255, 0.96);
+  --ink: #111111;
+  --muted: #666666;
+  --line: #e4e4e4;
+  --line-light: #f0f0f0;
+  --dark: #111111;
+  --dark2: #000000;
+
+  /* Semantic Accent Tokens */
+  --sun: #e50010;
+  --sun-hover: #c7000e;
+  --leaf: #111111;
+  --leaf-hover: #e50010;
+  --soft: #f4f4f4;
+  --wa-green: #25d366;
+  --wa-hover: #20bd5a;
+
+  /* Radii & Shadows */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 14px 36px rgba(0, 0, 0, 0.12);
+  --transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Touch Target */
+  --touch-target: 44px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121212;
+    --bg-subtle: #181818;
+    --card: #1c1c1c;
+    --card-translucent: rgba(28, 28, 28, 0.96);
+    --ink: #f5f5f5;
+    --muted: #9e9e9e;
+    --line: #2e2e2e;
+    --line-light: #242424;
+    --dark: #111111;
+    --dark2: #050505;
+    --sun: #ff2b38;
+    --sun-hover: #e50010;
+    --leaf: #ffffff;
+    --leaf-hover: #ff2b38;
+    --soft: #242424;
+    --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Base, Reset & Universal Responsive Container
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 74px;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Poppins", "Noto Sans Tamil", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 600px) {
+  .wrap {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrap {
+    padding: 0 12px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Top Announcement Bar
+   -------------------------------------------------------------------------- */
+.top {
+  background: #000000;
+  color: #ffffff;
+  font-size: 0.84rem;
+  padding: 9px 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top a {
+  color: #ff3342;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.top a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   4. Navigation Bar (Seamless Across Desktop, Tablet & Mobile)
+   -------------------------------------------------------------------------- */
+nav {
+  background: var(--card-translucent);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  width: 100%;
+  transition: var(--transition);
+}
+
+nav .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: relative;
+  flex-wrap: nowrap;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.logo i {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--hm-red);
+  display: grid;
+  place-items: center;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 1.45rem;
+  font-weight: 900;
+  box-shadow: 0 4px 10px rgba(229, 0, 16, 0.3);
+  flex-shrink: 0;
+  letter-spacing: -0.04em;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-brand {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.logo-sub {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.2;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Desktop Menu Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 6px 0;
+  position: relative;
+  transition: var(--transition);
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--hm-red);
+  transition: width 0.22s ease;
+  border-radius: 2px;
+}
+
+.links a:hover,
+.links a.active {
+  color: var(--hm-red);
+}
+
+.links a:hover::after,
+.links a.active::after {
+  width: 100%;
+}
+
+/* Nav Actions Container */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Language Switcher */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  gap: 2px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 11px;
+  border-radius: var(--radius-full);
+  color: var(--muted);
+  text-decoration: none;
+  transition: var(--transition);
+  min-height: 28px;
+  white-space: nowrap;
+}
+
+.lang-btn:hover {
+  color: var(--ink);
+}
+
+.lang-btn.active {
+  background: var(--dark);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Emergency Call Pill Button */
+.pill {
+  background: var(--hm-red);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(229, 0, 16, 0.25);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+  min-height: 38px;
+}
+
+.pill:hover {
+  background: var(--hm-red-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(229, 0, 16, 0.35);
+  color: #ffffff;
+}
+
+/* Mobile Hamburger Toggle Button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 8px;
+  gap: 5px;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.nav-toggle:hover {
+  background: var(--card);
+}
+
+.nav-toggle .bar {
+  width: 20px;
+  height: 2px;
+  background-color: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero Section (Responsive 2-Col to 1-Col Stack)
+   -------------------------------------------------------------------------- */
+.hero {
+  background: 
+    linear-gradient(to right, rgba(10, 10, 10, 0.88) 0%, rgba(15, 15, 15, 0.70) 50%, rgba(10, 10, 10, 0.65) 100%),
+    url('images/coimbatore-hero.jpg') center center / cover no-repeat;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 56px;
+  padding-bottom: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(229, 0, 16, 0.16);
+  color: #ff3b47;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid rgba(229, 0, 16, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(4px);
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  margin: 16px 0 14px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  word-wrap: break-word;
+}
+
+.ta {
+  color: #e5e5e5;
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.hero p {
+  color: #cccccc;
+  max-width: 32em;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.ticks {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.ticks li::before {
+  content: "✓ ";
+  color: var(--hm-red);
+  font-weight: 900;
+  margin-right: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Booking Form Card & Touch Inputs
+   -------------------------------------------------------------------------- */
+.form {
+  background: var(--card);
+  color: var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--line);
+  width: 100%;
+}
+
+.form h2 {
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.form p {
+  color: var(--muted);
+  margin: 0 0 16px;
+  font-size: 0.88rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-group {
+  margin-bottom: 6px;
+}
+
+label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 10px 0 5px;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 16px; /* Crucial: Prevents iOS Safari from auto-zooming */
+  background: var(--bg-subtle);
+  color: var(--ink);
+  transition: var(--transition);
+  min-height: 44px;
+}
+
+select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 36px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--hm-red);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(229, 0, 16, 0.15);
+  background: var(--card);
+}
+
+.go {
+  width: 100%;
+  margin-top: 18px;
+  border: 0;
+  background: var(--dark);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+  min-height: 48px;
+}
+
+.go:hover {
+  background: var(--hm-red);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(229, 0, 16, 0.35);
+}
+
+/* Road curve SVG transition */
+.road {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  opacity: 1;
+  z-index: 1;
+}
+
+.road path {
+  fill: var(--bg);
+  transition: var(--transition);
+}
+
+/* --------------------------------------------------------------------------
+   7. Sections, Headings & Flexible Grid System
+   -------------------------------------------------------------------------- */
+section {
+  padding: 64px 0;
+  width: 100%;
+}
+
+.h {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.h h2 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin: 0 0 8px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.h p {
+  margin: 0 auto;
+  color: var(--muted);
+  max-width: 36em;
+  font-size: 1rem;
+}
+
+.h b {
+  display: block;
+  width: 44px;
+  height: 3px;
+  background: var(--hm-red);
+  border-radius: var(--radius-full);
+  margin: 14px auto 0;
+}
+
+/* Universal safe auto-fit grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--hm-red);
+}
+
+.card .ic {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--soft);
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.card:hover .ic {
+  background: var(--hm-red-subtle);
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.alt {
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* --------------------------------------------------------------------------
+   8. Stats Section
+   -------------------------------------------------------------------------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.stat {
+  background: #000000;
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--hm-red);
+  line-height: 1.1;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+
+.stat span {
+  font-size: 0.82rem;
+  color: #cccccc;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   9. City Banner with Isha / Coimbatore Imagery
+   -------------------------------------------------------------------------- */
+.city-banner {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 26px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-sm);
+  align-items: center;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.city-banner:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--hm-red);
+}
+
+.city-banner-img {
+  position: relative;
+  height: 100%;
+  min-height: 200px;
+  overflow: hidden;
+}
+
+.city-banner-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.city-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.88);
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(229, 0, 16, 0.4);
+  letter-spacing: 0.02em;
+  z-index: 2;
+}
+
+.city-banner-content {
+  padding: 22px 26px 22px 0;
+}
+
+.city-banner-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.city-banner-content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   10. Zones / Coverage Areas
+   -------------------------------------------------------------------------- */
+.zones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.zone h3 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  color: var(--ink);
+  font-weight: 800;
+  border-left: 3px solid var(--hm-red);
+  padding-left: 8px;
+}
+
+.zone span {
+  display: inline-block;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 5px 12px;
+  margin: 0 6px 8px 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  transition: var(--transition);
+  word-break: break-word;
+}
+
+.zone span:hover {
+  border-color: var(--hm-red);
+  color: var(--hm-red);
+  background: var(--card);
+}
+
+/* --------------------------------------------------------------------------
+   11. How It Works Steps
+   -------------------------------------------------------------------------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 20px;
+  counter-reset: s;
+  width: 100%;
+}
+
+.step {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.step:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--hm-red);
+}
+
+.step::before {
+  counter-increment: s;
+  content: counter(s);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--hm-red);
+  color: #ffffff;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.step h3 {
+  margin: 0 0 6px;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* --------------------------------------------------------------------------
+   12. FAQ Accordions
+   -------------------------------------------------------------------------- */
+details {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  margin: 0 auto 12px;
+  max-width: 760px;
+  width: 100%;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+details[open] {
+  border-color: var(--dark);
+  box-shadow: var(--shadow-sm);
+}
+
+summary {
+  cursor: pointer;
+  padding: 16px 20px;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+  min-height: 48px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--hm-red);
+  line-height: 1;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+details[open] summary::after {
+  content: "–";
+}
+
+details p {
+  margin: 0;
+  padding: 0 20px 18px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   13. CTA Section
+   -------------------------------------------------------------------------- */
+.cta {
+  background: #000000;
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 54px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+}
+
+.cta h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.cta p {
+  margin: 0 0 8px;
+  color: #cccccc;
+  font-size: 1rem;
+}
+
+.cta .n {
+  display: block;
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  font-weight: 900;
+  color: var(--hm-red);
+  text-decoration: none;
+  margin: 12px 0 24px;
+  letter-spacing: -0.01em;
+  transition: var(--transition);
+  word-break: break-all;
+}
+
+.cta .n:hover {
+  transform: scale(1.03);
+  color: #ff3b47;
+}
+
+.cta .b {
+  display: inline-block;
+  margin: 6px;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  min-height: 48px;
+}
+
+.cta .c1 {
+  background: var(--hm-red);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(229, 0, 16, 0.35);
+}
+
+.cta .c1:hover {
+  background: var(--hm-red-hover);
+  transform: translateY(-2px);
+}
+
+.cta .c2 {
+  background: var(--wa-green);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+.cta .c2:hover {
+  background: var(--wa-hover);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   14. Customer Reviews Component Styles
+   -------------------------------------------------------------------------- */
+.reviews-hero {
+  background: 
+    linear-gradient(to right, rgba(10, 10, 10, 0.90) 0%, rgba(18, 18, 18, 0.85) 100%),
+    url('images/coimbatore-hero.jpg') center center / cover no-repeat;
+  color: #ffffff;
+  padding: 50px 0 55px;
+  text-align: center;
+  width: 100%;
+}
+
+.reviews-hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+
+.reviews-hero p {
+  color: #cccccc;
+  margin: 0 auto;
+  max-width: 36em;
+  font-size: 1.05rem;
+}
+
+.rating-overview {
+  display: grid;
+  grid-template-columns: 260px 1fr 260px;
+  gap: 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  margin: -35px auto 40px;
+  max-width: 1080px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 10;
+  align-items: center;
+}
+
+.rating-score-box {
+  text-align: center;
+  border-right: 1px solid var(--line);
+  padding-right: 18px;
+}
+
+.rating-big {
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+}
+
+.stars {
+  color: #f59e0b;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  margin: 6px 0 4px;
+}
+
+.rating-count {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.rating-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rating-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.bar-track {
+  flex: 1;
+  height: 8px;
+  background: var(--soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--hm-red);
+  border-radius: 999px;
+}
+
+.rating-cta-box {
+  text-align: center;
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+}
+
+.rating-cta-box h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.rating-cta-box p {
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.btn-write-review {
+  display: inline-block;
+  background: var(--dark);
+  color: #ffffff;
+  padding: 11px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: 0;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  min-height: 44px;
+}
+
+.btn-write-review:hover {
+  background: var(--hm-red);
+  transform: translateY(-1px);
+}
+
+.review-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition);
+  min-height: 38px;
+}
+
+.filter-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.filter-btn.active {
+  background: var(--dark);
+  color: #ffffff;
+  border-color: var(--dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 22px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--hm-red);
+}
+
+.review-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--dark);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  border: 2px solid var(--hm-red);
+}
+
+.reviewer-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.reviewer-name {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reviewer-location {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.verified-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(37, 211, 102, 0.1);
+  color: #128c7e;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.review-rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.review-date {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.review-trip-badge {
+  display: inline-block;
+  background: var(--soft);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  word-break: break-word;
+}
+
+.review-text {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0;
+}
+
+.write-review-container {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin: 30px auto;
+  max-width: 680px;
+  width: 100%;
+  box-shadow: var(--shadow-md);
+  display: none;
+}
+
+.write-review-container.open {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------------------------------------
+   15. Footer & Floating Action Buttons
+   -------------------------------------------------------------------------- */
+footer {
+  padding: 34px 0 110px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.88rem;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  width: 100%;
+}
+
+.wa {
+  position: fixed;
+  right: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wa a {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  transition: var(--transition);
+}
+
+.wa a:hover {
+  transform: scale(1.08) translateY(-2px);
+}
+
+.wa .w {
+  background: var(--wa-green);
+  color: #ffffff;
+}
+
+.wa .p {
+  background: var(--hm-red);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(229, 0, 16, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   16. Accessibility Focus Outlines
+   -------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--hm-red);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   17. COMPREHENSIVE RESPONSIVE BREAKPOINTS (ALL DEVICES)
+   -------------------------------------------------------------------------- */
+
+/* TABLETS, IPADS & SMALL LAPTOPS (<= 1080px) */
+@media (max-width: 1080px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--card-translucent);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow-lg);
+    padding: 0 20px;
+    max-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 99;
+  }
+
+  .nav-menu.open {
+    max-height: 85vh;
+    padding: 16px 20px 24px;
+  }
+
+  .nav-menu .links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    white-space: normal;
+  }
+
+  .nav-menu .links a {
+    font-size: 1rem;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    color: var(--ink);
+    background: var(--bg-subtle);
+    border: 1px solid var(--line);
+    display: block;
+    transition: var(--transition);
+    min-height: 44px;
+  }
+
+  .nav-menu .links a:hover,
+  .nav-menu .links a:active,
+  .nav-menu .links a.active {
+    background: var(--card);
+    color: var(--hm-red);
+    padding-left: 20px;
+    border-color: var(--hm-red);
+  }
+
+  .hero .wrap {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    padding-bottom: 54px;
+    gap: 32px;
+  }
+
+  .city-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .city-banner-img {
+    height: 200px;
+    min-height: unset;
+  }
+
+  .city-banner-content {
+    padding: 20px 22px 24px;
+  }
+
+  .rating-overview {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: -24px;
+    padding: 24px;
+  }
+
+  .rating-score-box {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding-right: 0;
+    padding-bottom: 18px;
+  }
+
+  .rating-cta-box {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: 18px;
+  }
+}
+
+/* PHABLETS & PORTRAIT TABLETS (<= 768px) */
+@media (max-width: 768px) {
+  section {
+    padding: 48px 0;
+  }
+
+  .cta {
+    padding: 40px 20px;
+  }
+
+  .write-review-container {
+    padding: 20px 16px;
+  }
+}
+
+/* STANDARD SMARTPHONES (<= 580px) */
+@media (max-width: 580px) {
+  nav .nav-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    gap: 8px;
+  }
+
+  .logo {
+    gap: 8px;
+  }
+
+  .logo i {
+    width: 38px;
+    height: 38px;
+    font-size: 1.25rem;
+  }
+
+  .logo-brand {
+    font-size: 0.98rem;
+  }
+
+  .logo-sub {
+    display: none;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .lang-switcher {
+    padding: 2px 4px;
+    font-size: 0.78rem;
+  }
+
+  .lang-btn {
+    padding: 4px 8px;
+    font-size: 0.78rem;
+    min-height: 26px;
+  }
+
+  .pill {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    min-height: 36px;
+  }
+
+  .form {
+    padding: 20px 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .cta .b {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px 20px;
+    text-align: center;
+  }
+
+  .wa {
+    right: 14px;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    gap: 10px;
+  }
+
+  .wa a {
+    width: 48px;
+    height: 48px;
+    font-size: 1.35rem;
+  }
+}
+
+/* NARROW & ULTRA-SMALL SMARTPHONES (<= 420px: iPhone SE, Galaxy S21 mini) */
+@media (max-width: 420px) {
+  nav .nav-container {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .logo i {
+    width: 35px;
+    height: 35px;
+    font-size: 1.15rem;
+  }
+
+  .logo-brand {
+    font-size: 0.92rem;
+  }
+
+  .nav-call .call-text {
+    display: none; /* Icon-only on narrow phone so row never breaks */
+  }
+
+  .pill.nav-call {
+    padding: 7px 10px;
+    min-height: 34px;
+  }
+
+  .nav-toggle {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    gap: 4px;
+  }
+
+  .nav-toggle .bar {
+    width: 18px;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+
+  .hero .wrap {
+    padding-top: 28px;
+    padding-bottom: 40px;
+    gap: 20px;
+  }
+
+  .ticks {
+    gap: 6px 14px;
+    font-size: 0.88rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat {
+    padding: 16px 14px;
+  }
+
+  .stat strong {
+    font-size: 1.7rem;
+  }
+
+  .review-filters {
+    gap: 6px;
+  }
+
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+
+  .review-card {
+    padding: 18px 16px;
+  }
+}

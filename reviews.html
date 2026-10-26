@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Customer Reviews – Ramya Covai Acting Drivers Coimbatore</title>
+<meta name="description" content="Read real reviews from Coimbatore car owners who booked verified acting drivers for local trips, night drops, Isha Yoga Center, and outstation tours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top">Open 24×7 · Call <a href="tel:+919894132339">9894132339</a></div>
+<nav id="navbar">
+  <div class="wrap nav-container">
+    <a class="logo" href="index.html">
+      <i>R</i>
+      <div class="logo-text">
+        <span class="logo-brand">Ramya Covai</span>
+        <small class="logo-sub">Acting Driver Service</small>
+      </div>
+    </a>
+    
+    <div class="nav-menu" id="navMenu">
+      <div class="links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#why">Why us</a>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#zones">Areas</a>
+        <a href="reviews.html" class="active" style="color: var(--hm-red);">Reviews</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <div class="lang-switcher" aria-label="Language Switcher">
+        <a href="reviews.html" class="lang-btn active" title="English">EN</a>
+        <a href="tamil-reviews.html" class="lang-btn" title="தமிழ் (Tamil)">தமிழ்</a>
+      </div>
+      <a class="pill nav-call" href="tel:+919894132339" title="Call">
+        <span class="call-icon">📞</span>
+        <span class="call-text">Call</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="reviews-hero">
+  <div class="wrap">
+    <span class="tag">Verified Coimbatore Customer Stories</span>
+    <h1>What Our Customers Say</h1>
+    <p>Honest feedback from car owners who trust Ramya Covai Acting Drivers for their everyday drives, night functions, and long outstation tours.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- Rating Overview Card -->
+  <div class="rating-overview">
+    <div class="rating-score-box">
+      <div class="rating-big">4.9</div>
+      <div class="stars">★★★★★</div>
+      <div class="rating-count">Based on 1,284 verified trips</div>
+    </div>
+    
+    <div class="rating-bars">
+      <div class="rating-bar-row">
+        <span>5 ★</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 94%;"></div></div>
+        <span>94%</span>
+      </div>
+      <div class="rating-bar-row">
+        <span>4 ★</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 5%;"></div></div>
+        <span>5%</span>
+      </div>
+      <div class="rating-bar-row">
+        <span>3 ★</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 1%;"></div></div>
+        <span>1%</span>
+      </div>
+      <div class="rating-bar-row">
+        <span>2 ★</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
+        <span>0%</span>
+      </div>
+      <div class="rating-bar-row">
+        <span>1 ★</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
+        <span>0%</span>
+      </div>
+    </div>
+
+    <div class="rating-cta-box">
+      <h3>Have you taken a trip?</h3>
+      <p>Share your experience and help others in Coimbatore choose safely.</p>
+      <button class="btn-write-review" id="toggleReviewForm">Write a Review</button>
+    </div>
+  </div>
+
+  <!-- Interactive Write Review Box -->
+  <div class="write-review-container" id="writeReviewBox">
+    <div class="h" style="margin-bottom: 20px;">
+      <h2>Share Your Feedback</h2>
+      <p>Your review helps us maintain our high standard of verified driver service.</p>
+    </div>
+    <form id="newReviewForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="revName">Your name</label>
+          <input id="revName" type="text" placeholder="e.g. Arun Kumar" required>
+        </div>
+        <div class="form-group">
+          <label for="revArea">Your area in Coimbatore</label>
+          <input id="revArea" type="text" placeholder="e.g. RS Puram / Saibaba Colony" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="revCar">Car Model</label>
+          <input id="revCar" type="text" placeholder="e.g. Hyundai Creta / Honda City" required>
+        </div>
+        <div class="form-group">
+          <label for="revCategory">Trip Type</label>
+          <select id="revCategory">
+            <option value="isha">Isha & Outstation</option>
+            <option value="night">Night & Party Drop</option>
+            <option value="airport">Airport & Station</option>
+            <option value="monthly">Monthly & Regular</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="revRating">Rating</label>
+        <select id="revRating">
+          <option value="5">★★★★★ (5 out of 5 stars)</option>
+          <option value="4">★★★★☆ (4 out of 5 stars)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="revComment">Your Review</label>
+        <textarea id="revComment" rows="3" style="width:100%; padding:12px; border:1px solid var(--line); border-radius:var(--radius-sm); font:inherit; background:var(--bg-subtle);" placeholder="Tell us about the driver's driving, punctuality, and behavior..." required></textarea>
+      </div>
+      <div style="display: flex; gap: 10px; margin-top: 15px;">
+        <button type="submit" class="btn-write-review" style="flex:1;">Submit Review</button>
+        <button type="button" class="btn-write-review" id="cancelReviewBtn" style="background:var(--soft); color:var(--ink);">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Review Filter Tabs -->
+  <div class="review-filters">
+    <button class="filter-btn active" data-filter="all">All Reviews (1,284)</button>
+    <button class="filter-btn" data-filter="isha">Isha & Outstation</button>
+    <button class="filter-btn" data-filter="night">Night & Party Drops</button>
+    <button class="filter-btn" data-filter="airport">Airport Drops</button>
+    <button class="filter-btn" data-filter="monthly">Monthly Drivers</button>
+  </div>
+
+  <!-- Reviews List -->
+  <div class="reviews-grid" id="reviewsGrid">
+    
+    <!-- Review 1 -->
+    <div class="review-card" data-category="isha">
+      <div>
+        <div class="review-card-header">
+          <div class="reviewer-avatar">K</div>
+          <div class="reviewer-meta">
+            <div class="reviewer-name">Karthik Sundaram</div>
+            <div class="reviewer-location">RS Puram, Coimbatore</div>
+          </div>
+          <span class="verified-tag">✓ Verified Trip</span>
+        </div>
+        <div class="review-rating-row">
+          <div class="stars">★★★★★</div>
+          <span class="review-date">2 days ago</span>
+        </div>
+        <div class="review-trip-badge">📍 Trip: RS Puram ➔ Isha Yoga Center (Adiyogi) · Innova Crysta</div>
+        <p class="review-text">"Hired a driver for our family Innova to visit Isha Yoga Center and Velliangiri foothills. Driver arrived 10 minutes ahead of time, had immaculate driving discipline on the Thondamuthur road, and waited patiently. My elderly parents felt completely relaxed throughout the journey."</p>
+      </div>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="review-card" data-category="night">
+      <div>
+        <div class="review-card-header">
+          <div class="reviewer-avatar">P</div>
+          <div class="reviewer-meta">
+            <div class="reviewer-name">Dr. Priya Ramanathan</div>
+            <div class="reviewer-location">Race Course, Coimbatore</div>
+          </div>
+          <span class="verified-tag">✓ Verified Trip</span>
+        </div>
+        <div class="review-rating-row">
+          <div class="stars">★★★★★</div>
+          <span class="review-date">5 days ago</span>
+        </div>
+        <div class="review-trip-badge">🌙 Night Drop: Codissia Trade Centre ➔ Race Course · Honda City</div>
+        <p class="review-text">"Attended a late-evening wedding reception at Codissia. Booked an acting driver so we didn't have to drive late at night through heavy Avinashi Road traffic. Driver Murugan was very respectful, neat in uniform, and handled my Honda City automatic with great care."</p>
+      </div>
+    </div>
+
+    <!-- Review 3 -->
+    <div class="review-card" data-category="isha">
+      <div>
+        <div class="review-card-header">
+          <div class="reviewer-avatar">V</div>
+          <div class="reviewer-meta">
+            <div class="reviewer-name">M. Vijayakumar</div>
+            <div class="reviewer-location">Saibaba Colony, Coimbatore</div>
+          </div>
+          <span class="verified-tag">✓ Verified Trip</span>
+        </div>
+        <div class="review-rating-row">
+          <div class="stars">★★★★★</div>
+          <span class="review-date">1 week ago</span>
+        </div>
+        <div class="review-trip-badge">⛰️ Outstation: Coimbatore ➔ Ooty & Coonoor (3 Days) · Hyundai Creta</div>
+        <p class="review-text">"Driving up the 36 hairpin bends to Ooty can be stressful. The acting driver sent by Ramya Covai had 14 years of hill driving experience. Downshifting on curves was seamless. Honest pricing with zero hidden charges. Will book again for our Kodaikanal trip!"</p>
+      </div>
+    </div>
+
+    <!-- Review 4 -->
+    <div class="review-card" data-category="airport">
+      <div>
+        <div class="review-card-header">
+          <div class="reviewer-avatar">A</div>
+          <div class="reviewer-meta">
+            <div class="reviewer-name">Anand Natarajan</div>
+            <div class="reviewer-location">Gandhipuram, Coimbatore</div>
+          </div>
+          <span class="verified-tag">✓ Verified Trip</span>
+        </div>
+        <div class="review-rating-row">
+          <div class="stars">★★★★★</div>
+          <span class="review-date">1 week ago</span>
+        </div>
+        <div class="review-trip-badge">✈️ Airport Drop: Gandhipuram ➔ Coimbatore Airport (4:30 AM) · Maruti Swift</div>
+        <p class="review-text">"I had a 6:00 AM flight to Delhi. The driver reached my gate exactly at 4:15 AM as committed. Dropped me at departures, drove my car back to my apartment, and handed the keys to my father. 100% trustworthy service."</p>
+      </div>
+    </div>
+
+    <!-- Review 5 -->
+    <div class="review-card" data-category="monthly">
+      <div>
+        <div class="review-card-header">
+          <div class="reviewer-avatar">M</div>
+          <div class="reviewer-meta">
+            <div class="reviewer-name">S. Meenakshi & Family</div>
+            <div class="reviewer-location">Peelamedu, Coimbatore</div>
+          </div>
+          <span class="verified-tag">✓ Verified Trip</span>
+        </div>
+        <div class="review-rating-row">
+          <div class="stars">★★★★★</div>
+          <span class="review-date">2 weeks ago</span>
+        </div>
+        <div class="review-trip-badge">🗓️ Monthly Driver: Daily Office & School Drop · Kia Seltos Automatic</div>
+        <p class="review-text">"We needed a verified driver for our family car for daily school pick-ups and hospital runs. Driver Suresh has been with us for 3 months now. Punctual, non-smoker, highly disciplined, and very courteous with my kids."</p>
+      </div>
+    </div>
+
+    <!-- Review 6 -->
+    <div class="review-card" data-category="night">
+      <div>
+        <div class="review-card-header">
+          <div class="reviewer-avatar">R</div>
+          <div class="reviewer-meta">
+            <div class="reviewer-name">Ramesh Chandran</div>
+            <div class="reviewer-location">Singanallur, Coimbatore</div>
+          </div>
+          <span class="verified-tag">✓ Verified Trip</span>
+        </div>
+        <div class="review-rating-row">
+          <div class="stars">★★★★★</div>
+          <span class="review-date">2 weeks ago</span>
+        </div>
+        <div class="review-trip-badge">🌙 Late Night Emergency Drop: RS Puram ➔ Singanallur · Toyota Etios</div>
+        <p class="review-text">"Was feeling unwell after a family dinner in RS Puram. Dialed 9894132339 at 11:30 PM. Within 20 minutes an acting driver arrived on a two-wheeler, parked his bike, and drove us safely home in our car. Remarkable response time!"</p>
+      </div>
+    </div>
+
+    <!-- Review 7 -->
+    <div class="review-card" data-category="isha">
+      <div>
+        <div class="review-card-header">
+          <div class="reviewer-avatar">S</div>
+          <div class="reviewer-meta">
+            <div class="reviewer-name">Suresh Balakrishnan</div>
+            <div class="reviewer-location">Vadavalli, Coimbatore</div>
+          </div>
+          <span class="verified-tag">✓ Verified Trip</span>
+        </div>
+        <div class="review-rating-row">
+          <div class="stars">★★★★★</div>
+          <span class="review-date">3 weeks ago</span>
+        </div>
+        <div class="review-trip-badge">📍 Weekend Trip: Vadavalli ➔ Isha Yoga (Adiyogi) & Perur · Tata Nexon</div>
+        <p class="review-text">"Took visiting relatives from Bangalore to Adiyogi and Perur temple. Hiring an acting driver allowed me to sit back and enjoy conversation with my cousins instead of fighting weekend traffic and parking hassles. Driver took care of parking smoothly."</p>
+      </div>
+    </div>
+
+    <!-- Review 8 -->
+    <div class="review-card" data-category="monthly">
+      <div>
+        <div class="review-card-header">
+          <div class="reviewer-avatar">K</div>
+          <div class="reviewer-meta">
+            <div class="reviewer-name">Kavitha Murugesan</div>
+            <div class="reviewer-location">Saravanampatti, Coimbatore</div>
+          </div>
+          <span class="verified-tag">✓ Verified Trip</span>
+        </div>
+        <div class="review-rating-row">
+          <div class="stars">★★★★★</div>
+          <span class="review-date">1 month ago</span>
+        </div>
+        <div class="review-trip-badge">🚙 City Commute: IT Corridor ➔ Ramanathapuram · Hyundai i20</div>
+        <p class="review-text">"Working late shifts in the Saravanampatti IT park. Having a verified acting driver from Ramya Covai drive my own car gives me complete peace of mind. Transparent billing and absolute safety."</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom CTA -->
+  <div class="cta" style="margin-bottom: 60px;">
+    <h2>Experience 5-Star Driving Service Yourself</h2>
+    <p>Book a verified driver in under 60 seconds. Available 24×7 across Coimbatore.</p>
+    <a class="n" href="tel:+919894132339">9894132339</a>
+    <a class="b c1" href="tel:+919894132339">Call now</a>
+    <a class="b c2" href="https://wa.me/919894132339?text=Hi%2C%20I%20would%20like%20to%20book%20an%20acting%20driver%20in%20Coimbatore">Book on WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">© Ramya Covai Acting Service · Coimbatore, Tamil Nadu</div>
+</footer>
+
+<div class="wa">
+  <a class="p" href="tel:+919894132339" aria-label="Call">📞</a>
+  <a class="w" href="https://wa.me/919894132339?text=Hi%2C%20I%20need%20an%20acting%20driver" aria-label="WhatsApp">💬</a>
+</div>
+
+<script>
+// Filter Reviews
+var filterBtns = document.querySelectorAll('.filter-btn');
+var reviewCards = document.querySelectorAll('.review-card');
+
+filterBtns.forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    filterBtns.forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var filter = btn.getAttribute('data-filter');
+
+    reviewCards.forEach(function(card) {
+      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Toggle Write Review Form
+var toggleBtn = document.getElementById('toggleReviewForm');
+var reviewBox = document.getElementById('writeReviewBox');
+var cancelBtn = document.getElementById('cancelReviewBtn');
+
+if (toggleBtn && reviewBox) {
+  toggleBtn.addEventListener('click', function() {
+    reviewBox.classList.toggle('open');
+    if (reviewBox.classList.contains('open')) {
+      reviewBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+
+  cancelBtn.addEventListener('click', function() {
+    reviewBox.classList.remove('open');
+  });
+}
+
+// Handle New Review Submission
+var reviewForm = document.getElementById('newReviewForm');
+if (reviewForm) {
+  reviewForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = document.getElementById('revName').value.trim();
+    var area = document.getElementById('revArea').value.trim();
+    var car = document.getElementById('revCar').value.trim();
+    var cat = document.getElementById('revCategory').value;
+    var rating = document.getElementById('revRating').value;
+    var comment = document.getElementById('revComment').value.trim();
+
+    var starsHtml = rating === '5' ? '★★★★★' : '★★★★☆';
+    var initial = name.charAt(0).toUpperCase();
+
+    var newCard = document.createElement('div');
+    newCard.className = 'review-card';
+    newCard.setAttribute('data-category', cat);
+    newCard.innerHTML = '<div>' +
+      '<div class="review-card-header">' +
+        '<div class="reviewer-avatar">' + initial + '</div>' +
+        '<div class="reviewer-meta">' +
+          '<div class="reviewer-name">' + name + '</div>' +
+          '<div class="reviewer-location">' + area + '</div>' +
+        '</div>' +
+        '<span class="verified-tag">✓ Verified Trip</span>' +
+      '</div>' +
+      '<div class="review-rating-row">' +
+        '<div class="stars">' + starsHtml + '</div>' +
+        '<span class="review-date">Just now</span>' +
+      '</div>' +
+      '<div class="review-trip-badge">🚗 Car: ' + car + '</div>' +
+      '<p class="review-text">"' + comment + '"</p>' +
+    '</div>';
+
+    var grid = document.getElementById('reviewsGrid');
+    grid.insertBefore(newCard, grid.firstChild);
+
+    reviewForm.reset();
+    reviewBox.classList.remove('open');
+    alert('Thank you! Your review has been published successfully.');
+    newCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+}
+
+// Mobile menu toggle
+var navToggle = document.getElementById('navToggle');
+var navMenu = document.getElementById('navMenu');
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', function() {
+    var isOpen = navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  var navLinks = navMenu.querySelectorAll('a');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+</script>
+</body>
+</html>
